@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @export_group("Movement Settings")
 @export var friction: float = 0.15
-@export var air_friction: float = 0.98 # To slow down horizontal speed slightly
 @export var gravity: float = 980.0
 
 @onready var weapon_slot = $WeaponSlot
@@ -17,8 +16,8 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		fire_weapon()
-	
-	velocity.x = lerp(velocity.x, 0.0, friction)
+	if is_on_floor():
+		velocity.x = lerp(velocity.x, 0.0, friction)
 	
 	move_and_slide()
 	
