@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c0sm0vsja0ten"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
+radius = 5.0
+height = 12.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1454191691]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1935320543]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1971133306]
+shape = SubResource("CapsuleShape2D_u8vuu")
+
+[node name="WeaponSlot" type="Marker2D" parent="." unique_id=591456796]
+
+[node name="Weapon" type="ColorRect" parent="WeaponSlot" unique_id=115247713]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 7.0
+offset_bottom = 1.0
+color = Color(0.3499999, 1, 0.25, 1)
+
+[node name="Muzzle" type="Marker2D" parent="WeaponSlot/Weapon" unique_id=1103265239]
+position = Vector2(8, 1)
