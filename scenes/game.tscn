@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rm1ri7kh8ky6" path="res://assets/tileset_basic.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://d1e0415wa305y" path="res://scenes/killzone.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c0sm0vsja0ten" path="res://scenes/player.tscn" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://0s2u2r8w0q46" path="res://src/camera_2d.gd" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -1477,7 +1478,7 @@ scale = Vector2(2.4000003, 0.93096626)
 position = Vector2(552, -146)
 scale = Vector2(2.4000003, 0.93096626)
 
-[node name="Player" parent="levelContainer/levelTest" unique_id=1454191691 instance=ExtResource("4_lbhrr")]
+[node name="Player" parent="." unique_id=1454191691 instance=ExtResource("4_lbhrr")]
 position = Vector2(-27, -30)
 
 [node name="floorBoundary" type="StaticBody2D" parent="levelContainer/levelTest" unique_id=648920037]
@@ -1485,3 +1486,8 @@ position = Vector2(-27, -30)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="levelContainer/levelTest/floorBoundary" unique_id=1307484207]
 position = Vector2(7, 97)
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1400858751]
+zoom = Vector2(4.745, 4.745)
+limit_enabled = false
+script = ExtResource("5_iywne")
+follow_target = NodePath("../Player")

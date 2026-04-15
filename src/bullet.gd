@@ -1,6 +1,8 @@
 extends Area2D
 
-var speed: float = 400.0
+@export_group("Bullet Settings")
+
+@export var speed: float = 200.0
 var direction: Vector2 = Vector2.RIGHT
 
 func _process(delta: float) -> void:
