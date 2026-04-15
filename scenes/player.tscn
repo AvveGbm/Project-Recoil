@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c0sm0vsja0ten"]
+
+[ext_resource type="Script" uid="uid://b7u7h7ammvfd4" path="res://src/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://cysew2aq4dqih" path="res://scenes/weapon.tscn" id="2_qhqgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
+radius = 5.0
+height = 12.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1454191691]
+script = ExtResource("1_g2els")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1935320543]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1971133306]
+shape = SubResource("CapsuleShape2D_u8vuu")
+
+[node name="WeaponSlot" type="Marker2D" parent="." unique_id=591456796]
+
+[node name="Weapon" parent="WeaponSlot" unique_id=1532869559 instance=ExtResource("2_qhqgy")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1625863631]
+zoom = Vector2(1.735, 1.735)
+position_smoothing_enabled = true

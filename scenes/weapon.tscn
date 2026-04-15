@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cysew2aq4dqih"]
+
+[ext_resource type="Script" uid="uid://cxdwk55kg3ilt" path="res://src/weapon.gd" id="1_xasec"]
+[ext_resource type="PackedScene" uid="uid://bjxo3uebd2kgo" path="res://scenes/bullet.tscn" id="2_uxn4k"]
+
+[node name="Weapon" type="Node2D" unique_id=1137514977]
+script = ExtResource("1_xasec")
+projectile_scene = ExtResource("2_uxn4k")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=112829414]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 7.0
+offset_bottom = 1.0
+color = Color(0, 1, 0.41666675, 1)
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=673833796]
+position = Vector2(7, 0)
