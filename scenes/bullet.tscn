@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bjxo3uebd2kgo"]
 
+[ext_resource type="Script" uid="uid://nt02whpmfn2h" path="res://src/bullet.gd" id="1_mkf8s"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1aey"]
 size = Vector2(6, 2)
 
 [node name="Bullet" type="Area2D" unique_id=602196533]
+script = ExtResource("1_mkf8s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=899325272]
 shape = SubResource("RectangleShape2D_h1aey")
@@ -14,3 +17,9 @@ offset_top = -2.0
 offset_right = 4.0
 offset_bottom = 2.0
 color = Color(1, 0, 0, 1)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=568419136]
+rect = Rect2(-4, -2, 8, 4)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
