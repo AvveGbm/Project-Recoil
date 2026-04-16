@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bs86pmej3loec"]
+
+[ext_resource type="Texture2D" uid="uid://dc2crjsw7omxh" path="res://assets/single_brick_block.png" id="1_8a5b4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(48, 16)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=506586740]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284238183]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=406155039]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+grow_vertical = 2
+texture = ExtResource("1_8a5b4")
+stretch_mode = 1
