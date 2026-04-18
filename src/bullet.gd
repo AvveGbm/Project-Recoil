@@ -1,7 +1,7 @@
 extends Area2D
-
+class_name Bullet
 @export_group("Bullet Settings")
-
+## The speed of the bullet
 @export var speed: float = 200.0
 var direction: Vector2 = Vector2.RIGHT
 
