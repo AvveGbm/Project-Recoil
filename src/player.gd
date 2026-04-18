@@ -10,6 +10,9 @@ class_name Player
 @onready var weapon_slot = $WeaponSlot
 @onready var weapon: Weapon = $WeaponSlot/Weapon
 
+func _ready() -> void:
+	GameState.player = self
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta

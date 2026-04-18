@@ -1544,6 +1544,7 @@ libraries/ = SubResource("AnimationLibrary_gee14")
 autoplay = &"move"
 
 [node name="Player" parent="." unique_id=1454191691 instance=ExtResource("4_lbhrr")]
+unique_name_in_owner = true
 position = Vector2(-27, -30)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1400858751]
