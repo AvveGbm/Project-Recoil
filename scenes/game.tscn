@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://rm1ri7kh8ky6" path="res://assets/tileset_basic.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://d1e0415wa305y" path="res://scenes/levelObjects/killzone.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammo.tscn" id="3_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://c0sm0vsja0ten" path="res://scenes/player.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c0reyqitjc24u" path="res://scenes/levelObjects/verticalPlatform.tscn" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://cehfc5pee5adg" path="res://scenes/levelObjects/coin.tscn" id="4_u5sy4"]
@@ -1514,9 +1515,12 @@ scale = Vector2(2.4000003, 0.93096626)
 position = Vector2(7, 97)
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
 
+[node name="Ammo" parent="levelContainer/levelTest" unique_id=1731651190 instance=ExtResource("3_u5sy4")]
+position = Vector2(120, -24)
+
 [node name="Coins" type="Node" parent="levelContainer/levelTest" unique_id=1673447746]
 
-[node name="Coin" parent="levelContainer/levelTest/Coins" unique_id=1731651190 instance=ExtResource("4_u5sy4")]
+[node name="Coin" parent="levelContainer/levelTest/Coins" unique_id=1534486827 instance=ExtResource("4_u5sy4")]
 position = Vector2(40, -24)
 
 [node name="Coin2" parent="levelContainer/levelTest/Coins" unique_id=1358749270 instance=ExtResource("4_u5sy4")]
