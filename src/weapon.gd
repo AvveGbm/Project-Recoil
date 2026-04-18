@@ -16,9 +16,12 @@ class_name Weapon
 var is_on_cooldown: bool
 var current_ammo: int
 
+signal ammo_changed(current: int, max: int)
+
 func _ready() -> void:
 	is_on_cooldown = false
 	current_ammo = max_ammo
+	ammo_changed.emit(current_ammo, max_ammo)
 	
 ## Returns true if the weapon is able to fire.
 func can_shoot() -> bool:
@@ -41,6 +44,7 @@ func shoot() -> float:
 	bullet.rotation = global_rotation
 	
 	current_ammo -= 1
+	ammo_changed.emit(current_ammo, max_ammo)
 	start_cooldown()
 
 	return recoil_strength
@@ -56,7 +60,9 @@ func refill(amount: int) -> void:
 	if amount <= 0:
 		return
 	current_ammo = min(current_ammo+amount, max_ammo)
+	ammo_changed.emit(current_ammo, max_ammo)
 
 ## Fully refills ammo to max_ammo
 func refill_full() -> void:
 	current_ammo = max_ammo
+	ammo_changed.emit(current_ammo, max_ammo)

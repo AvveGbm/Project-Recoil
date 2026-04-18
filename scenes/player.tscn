@@ -23,3 +23,6 @@ shape = SubResource("CapsuleShape2D_u8vuu")
 
 [node name="Weapon" parent="WeaponSlot" unique_id=1532869559 instance=ExtResource("2_qhqgy")]
 bullet_scene = ExtResource("3_qhqgy")
+recoil_strength = 300.0
+shot_cooldown = 0.2
+max_ammo = 10
