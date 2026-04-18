@@ -1,6 +1,5 @@
 extends Area2D
 
-@onready var gameState: Node = %gameState
 @onready var timer: Timer = $Timer
 
 # Kill viable objects on collision
@@ -10,5 +9,5 @@ func _on_body_entered(body: Node2D) -> void:
 		print("Game Over: Player hit the killzone!")
 
 func _on_timer_timeout():
-		gameState.resetLevel()
+		GameState.reset_level()
 	
