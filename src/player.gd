@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export_group("Movement Settings")
 @export var ground_friction: float = 5.0
