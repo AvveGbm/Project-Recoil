@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bjnkocaadkd61"]
+
+[node name="loading_screen" type="CanvasLayer" unique_id=1218797811]
+follow_viewport_enabled = true
+
+[node name="background" type="ColorRect" parent="." unique_id=787898179]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
