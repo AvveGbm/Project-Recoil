@@ -16,7 +16,10 @@ func _process(_delta: float) -> void:
 
 ## Reloads the active scene, used as a level reset
 func reset_level():
-	get_tree().reload_current_scene()
+	LoadingScreen.switch_scene("res://scenes/levels/level_test.tscn")
+	await LoadingScreen.scene_loaded
+	get_tree().call_deferred("change_scene_to_packed", LoadingScreen.scene_to_load)
+	
 
 ## Increments total player score by amount
 func increase_score(amount: int) -> void:
