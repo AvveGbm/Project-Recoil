@@ -29,8 +29,9 @@ func player_can_move():
 	if player == null:
 		print("No player!")
 		return
-	if player.weapon.current_ammo == 0:
-		var time_until_reset := 1.0 # To avoid resetting at the apex of a leap
+	if player.is_on_floor() and player.weapon.current_ammo == 0:
+		var time_until_reset := 2.0 # To avoid resetting at the apex of a leap
 		await get_tree().create_timer(time_until_reset).timeout
-		if player.velocity == Vector2.ZERO:
+		if  player.velocity == Vector2.ZERO:
+			await get_tree().process_frame
 			reset_level()

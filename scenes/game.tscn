@@ -1444,7 +1444,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("movingPlatform:position")
+tracks/0/path = NodePath("levelContainer/levelTest/movingPlatform:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1460,7 +1460,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("movingPlatform:position")
+tracks/0/path = NodePath("levelContainer/levelTest/movingPlatform:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1535,11 +1535,11 @@ position = Vector2(88, -24)
 [node name="Coin5" parent="levelContainer/levelTest/Coins" unique_id=55808420 instance=ExtResource("4_u5sy4")]
 position = Vector2(104, -24)
 
-[node name="movingPlatform" parent="." unique_id=506586740 instance=ExtResource("4_p57ef")]
+[node name="movingPlatform" parent="levelContainer/levelTest" unique_id=506586740 instance=ExtResource("4_p57ef")]
 position = Vector2(216, -40)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="movingPlatform" unique_id=791885018]
-root_node = NodePath("../..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="levelContainer/levelTest/movingPlatform" unique_id=791885018]
+root_node = NodePath("../../../..")
 libraries/ = SubResource("AnimationLibrary_gee14")
 autoplay = &"move"
 
