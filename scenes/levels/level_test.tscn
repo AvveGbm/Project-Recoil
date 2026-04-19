@@ -1536,3 +1536,6 @@ position = Vector2(216, -40)
 root_node = NodePath("../../../..")
 libraries/ = SubResource("AnimationLibrary_gee14")
 autoplay = &"move"
+
+[node name="spawnLocation" type="Node2D" parent="." unique_id=917037552]
+position = Vector2(-32, -32)

@@ -1,7 +1,7 @@
 extends Node
 
 var player_health: int # Unused
-var current_level # Unused
+var current_level := "res://scenes/levels/level_test.tscn"
 var player_score: int
 
 @onready var level_container: Node2D
@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 
 ## Reloads the active scene, used as a level reset
 func reset_level():
-	LoadingScreen.switch_scene("res://scenes/levels/level_test.tscn")
+	LoadingScreen.switch_scene(current_level)
 	await LoadingScreen.scene_loaded
 	get_tree().call_deferred("change_scene_to_packed", LoadingScreen.scene_to_load)
 	
