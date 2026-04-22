@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cehfc5pee5adg"]
 
 [ext_resource type="Texture2D" uid="uid://bb2b2i8c7qgfm" path="res://assets/coin3_16x16.png" id="1_26h66"]
-[ext_resource type="Script" uid="uid://c04bypmiss5du" path="res://src/score_component.gd" id="2_5qljr"]
+[ext_resource type="Script" uid="uid://kbkcjp2gwcdi" path="res://src/score_component.gd" id="2_5qljr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v664q"]
 size = Vector2(6, 6)
