@@ -4,12 +4,6 @@ extends Area2D
 
 # Kill viable objects on collision
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		GameState.stationary_timer_running = true # Avoids double resets
-		timer.start()
+	if body == GameState.player:
 		print("Game Over: Player hit the killzone!")
-
-func _on_timer_timeout():
-		GameState.reset_level()
-		GameState.stationary_timer_running = false
-	
+		GameState.reset_level(0.3)
