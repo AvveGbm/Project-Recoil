@@ -1,14 +1,26 @@
 [gd_scene format=3 uid="uid://bhxil7rr4bpxg"]
 
-[ext_resource type="Script" uid="uid://pvsssg45lod0" path="res://src/level_container.gd" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://j3qyift0sghj" path="res://src/game.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cfrsvl884a3h5" path="res://scenes/levels/level_test.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c0sm0vsja0ten" path="res://scenes/player.tscn" id="4_lbhrr"]
-[ext_resource type="Script" uid="uid://idn8cn5htofq" path="res://src/camera_2d.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://0s2u2r8w0q46" path="res://src/camera_2d.gd" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://bjnkocaadkd61" path="res://scenes/loading_screen.tscn" id="5_p57ef"]
+
+[sub_resource type="GDScript" id="GDScript_lnu2h"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	GameState.level_container = self
+"
 
 [node name="Game" type="Node2D" unique_id=199342983]
+script = ExtResource("1_lbhrr")
+levels = Array[PackedScene]([ExtResource("1_lnu2h")])
 
 [node name="levelContainer" type="Node2D" parent="." unique_id=821701576]
-script = ExtResource("1_lbhrr")
+script = SubResource("GDScript_lnu2h")
 
 [node name="levelTest" parent="levelContainer" unique_id=1882873330 instance=ExtResource("1_lnu2h")]
 
@@ -22,3 +34,5 @@ zoom = Vector2(3.5, 3.5)
 limit_enabled = false
 script = ExtResource("5_iywne")
 follow_target = NodePath("../Player")
+
+[node name="LoadingScreen" parent="." unique_id=1218797811 instance=ExtResource("5_p57ef")]
