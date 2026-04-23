@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7u7h7ammvfd4" path="res://src/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://cysew2aq4dqih" path="res://scenes/weapon.tscn" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://bjxo3uebd2kgo" path="res://scenes/bullet.tscn" id="3_qhqgy"]
-[ext_resource type="Script" uid="uid://br8hl3a7v5mog" path="res://scenes/player_hazard_interaction.gd" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://br8hl3a7v5mog" path="res://src/player_hazard_interaction.gd" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
 radius = 5.0
