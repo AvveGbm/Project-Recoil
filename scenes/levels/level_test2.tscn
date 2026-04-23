@@ -1,14 +1,12 @@
-[gd_scene format=4 uid="uid://cfrsvl884a3h5"]
+[gd_scene format=4 uid="uid://b7stgsgk2dqot"]
 
-[ext_resource type="Texture2D" uid="uid://rm1ri7kh8ky6" path="res://assets/tileset_basic.png" id="1_ycf23"]
-[ext_resource type="PackedScene" uid="uid://d1e0415wa305y" path="res://scenes/levelObjects/killzone.tscn" id="2_uh3ll"]
-[ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammo.tscn" id="3_4lw2e"]
-[ext_resource type="PackedScene" uid="uid://cehfc5pee5adg" path="res://scenes/levelObjects/coin.tscn" id="4_bqmi1"]
-[ext_resource type="PackedScene" uid="uid://c0reyqitjc24u" path="res://scenes/levelObjects/verticalPlatform.tscn" id="5_8883n"]
-[ext_resource type="PackedScene" uid="uid://dy5d7eskx4v1k" path="res://scenes/levelObjects/goal.tscn" id="6_uh3ll"]
+[ext_resource type="Texture2D" uid="uid://rm1ri7kh8ky6" path="res://assets/tileset_basic.png" id="1_cempo"]
+[ext_resource type="PackedScene" uid="uid://d1e0415wa305y" path="res://scenes/levelObjects/killzone.tscn" id="2_k5lvb"]
+[ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammo.tscn" id="3_mlbia"]
+[ext_resource type="PackedScene" uid="uid://cehfc5pee5adg" path="res://scenes/levelObjects/coin.tscn" id="4_lghq2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
-texture = ExtResource("1_ycf23")
+texture = ExtResource("1_cempo")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -1438,43 +1436,6 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 
-[sub_resource type="Animation" id="Animation_p57ef"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("levelContainer/levelTest/movingPlatform:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(216, -40)]
-}
-
-[sub_resource type="Animation" id="Animation_u5sy4"]
-resource_name = "move"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("levelContainer/levelTest/movingPlatform:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(216, -40), Vector2(216, -104)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gee14"]
-_data = {
-&"RESET": SubResource("Animation_p57ef"),
-&"move": SubResource("Animation_u5sy4")
-}
-
 [node name="levelTest" type="Node2D" unique_id=1882873330]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2133515183]
@@ -1484,23 +1445,23 @@ tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Hazards" type="Node" parent="." unique_id=521295595]
 
-[node name="Killzone" parent="Hazards" unique_id=1345664885 instance=ExtResource("2_uh3ll")]
+[node name="Killzone" parent="Hazards" unique_id=1345664885 instance=ExtResource("2_k5lvb")]
 position = Vector2(8, 62)
 scale = Vector2(2.4000003, 0.93096626)
 
-[node name="Killzone2" parent="Hazards" unique_id=1882873858 instance=ExtResource("2_uh3ll")]
+[node name="Killzone2" parent="Hazards" unique_id=1882873858 instance=ExtResource("2_k5lvb")]
 position = Vector2(215.99998, 62.000004)
 scale = Vector2(5.599998, 0.93096626)
 
-[node name="Killzone4" parent="Hazards" unique_id=259761581 instance=ExtResource("2_uh3ll")]
+[node name="Killzone4" parent="Hazards" unique_id=259761581 instance=ExtResource("2_k5lvb")]
 position = Vector2(488, 46)
 scale = Vector2(2.4000003, 0.93096626)
 
-[node name="Killzone5" parent="Hazards" unique_id=2077658298 instance=ExtResource("2_uh3ll")]
+[node name="Killzone5" parent="Hazards" unique_id=2077658298 instance=ExtResource("2_k5lvb")]
 position = Vector2(424, -146)
 scale = Vector2(2.4000003, 0.93096626)
 
-[node name="Killzone6" parent="Hazards" unique_id=894481416 instance=ExtResource("2_uh3ll")]
+[node name="Killzone6" parent="Hazards" unique_id=894481416 instance=ExtResource("2_k5lvb")]
 position = Vector2(552, -146)
 scale = Vector2(2.4000003, 0.93096626)
 
@@ -1510,38 +1471,46 @@ scale = Vector2(2.4000003, 0.93096626)
 position = Vector2(7, 97)
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
 
-[node name="Ammo" parent="." unique_id=1731651190 instance=ExtResource("3_4lw2e")]
-position = Vector2(120, -24)
-
 [node name="Coins" type="Node" parent="." unique_id=1141958343]
 
-[node name="Coin" parent="Coins" unique_id=553655315 instance=ExtResource("4_bqmi1")]
-position = Vector2(40, -24)
+[node name="Coin" parent="Coins" unique_id=553655315 instance=ExtResource("4_lghq2")]
+position = Vector2(88, -113)
 
-[node name="Coin2" parent="Coins" unique_id=1548535298 instance=ExtResource("4_bqmi1")]
-position = Vector2(56, -24)
+[node name="Coin2" parent="Coins" unique_id=1548535298 instance=ExtResource("4_lghq2")]
+position = Vector2(78, -119)
 
-[node name="Coin3" parent="Coins" unique_id=1528510420 instance=ExtResource("4_bqmi1")]
-position = Vector2(72, -24)
+[node name="Coin3" parent="Coins" unique_id=1528510420 instance=ExtResource("4_lghq2")]
+position = Vector2(54, -120)
 
-[node name="Coin4" parent="Coins" unique_id=1091992015 instance=ExtResource("4_bqmi1")]
-position = Vector2(88, -24)
+[node name="Coin4" parent="Coins" unique_id=1091992015 instance=ExtResource("4_lghq2")]
+position = Vector2(46, -110)
 
-[node name="Coin5" parent="Coins" unique_id=1971363533 instance=ExtResource("4_bqmi1")]
+[node name="Coin5" parent="Coins" unique_id=1971363533 instance=ExtResource("4_lghq2")]
 position = Vector2(104, -24)
 
-[node name="movingPlatform" parent="." unique_id=506586740 instance=ExtResource("5_8883n")]
-position = Vector2(216, -40)
+[node name="Coin6" parent="Coins" unique_id=565063540 instance=ExtResource("4_lghq2")]
+position = Vector2(65, -125)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="movingPlatform" unique_id=1782977150]
-root_node = NodePath("../../../..")
-libraries/ = SubResource("AnimationLibrary_gee14")
-autoplay = &"move"
+[node name="Coin7" parent="Coins" unique_id=914126200 instance=ExtResource("4_lghq2")]
+position = Vector2(93, -98)
 
-[node name="Goal" parent="." unique_id=1495685245 instance=ExtResource("6_uh3ll")]
-position = Vector2(567, -8)
-collision_layer = 16
-collision_mask = 2
+[node name="Coin8" parent="Coins" unique_id=334237651 instance=ExtResource("4_lghq2")]
+position = Vector2(211, -79)
+
+[node name="Coin9" parent="Coins" unique_id=394277807 instance=ExtResource("4_lghq2")]
+position = Vector2(240, -74)
+
+[node name="Coin10" parent="Coins" unique_id=1857602791 instance=ExtResource("4_lghq2")]
+position = Vector2(186, -71)
+
+[node name="Coin11" parent="Coins" unique_id=739150783 instance=ExtResource("4_lghq2")]
+position = Vector2(162, -61)
 
 [node name="SpawnLocation" type="Marker2D" parent="." unique_id=1683538970]
 position = Vector2(-32, -32)
+
+[node name="Ammo2" parent="." unique_id=921956652 instance=ExtResource("3_mlbia")]
+position = Vector2(315, -27)
+
+[node name="Ammo" parent="." unique_id=1731651190 instance=ExtResource("3_mlbia")]
+position = Vector2(120, -24)
