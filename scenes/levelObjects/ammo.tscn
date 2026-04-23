@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c0iqepnpitdio"]
 
+[ext_resource type="Script" uid="uid://b32b31bv2c4el" path="res://src/pickup.gd" id="1_dof3y"]
 [ext_resource type="Texture2D" uid="uid://cjovlbr3j6y1t" path="res://assets/bullet.png" id="1_grevx"]
-[ext_resource type="Script" uid="uid://bj6uec3prwycv" path="res://src/ammo_component.gd" id="2_dof3y"]
+[ext_resource type="PackedScene" uid="uid://duyxv8rejsdt8" path="res://scenes/pickUpComponents/ammo_component.tscn" id="3_dof3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v664q"]
 size = Vector2(4, 8)
@@ -20,6 +21,7 @@ animations = [{
 [node name="Ammo" type="Area2D" unique_id=1731651190]
 collision_layer = 8
 collision_mask = 2
+script = ExtResource("1_dof3y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=417698679]
 position = Vector2(4, -4)
@@ -31,8 +33,5 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_db7v5")
 frame_progress = 0.2764626
 
-[node name="ammoComponent" type="Node" parent="." unique_id=1212256152]
-script = ExtResource("2_dof3y")
+[node name="ammoComponent" parent="." unique_id=7026294 instance=ExtResource("3_dof3y")]
 recover_by = 5
-
-[connection signal="body_entered" from="." to="ammoComponent" method="_on_ammo_body_entered"]

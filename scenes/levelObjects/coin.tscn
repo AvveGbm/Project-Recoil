@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cehfc5pee5adg"]
 
+[ext_resource type="Script" uid="uid://b32b31bv2c4el" path="res://src/pickup.gd" id="1_5qljr"]
 [ext_resource type="Texture2D" uid="uid://bb2b2i8c7qgfm" path="res://assets/coin3_16x16.png" id="1_26h66"]
 [ext_resource type="Script" uid="uid://kbkcjp2gwcdi" path="res://src/score_component.gd" id="2_5qljr"]
 
@@ -115,6 +116,7 @@ animations = [{
 [node name="Coin" type="Area2D" unique_id=1731651190]
 collision_layer = 8
 collision_mask = 2
+script = ExtResource("1_5qljr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=417698679]
 position = Vector2(4, -4)
@@ -124,11 +126,10 @@ shape = SubResource("RectangleShape2D_v664q")
 position = Vector2(4, -4)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_db7v5")
+autoplay = "default"
 frame_progress = 0.2764626
 
-[node name="scoreComponent" type="Node2D" parent="." unique_id=452787718]
-script = ExtResource("2_5qljr")
+[node name="scoreComponent" parent="." unique_id=227479902 instance=ExtResource("3_5qljr")]
 score_change = 10
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_entered" from="." to="scoreComponent" method="_on_area_2d_body_entered"]

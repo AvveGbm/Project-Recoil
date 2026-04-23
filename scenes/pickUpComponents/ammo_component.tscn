@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://duyxv8rejsdt8"]
+
+[ext_resource type="Script" uid="uid://ck4u28p2g2l6b" path="res://src/ammo_component.gd" id="1_ropya"]
+
+[node name="ammoComponent" type="Node" unique_id=7026294]
+script = ExtResource("1_ropya")
