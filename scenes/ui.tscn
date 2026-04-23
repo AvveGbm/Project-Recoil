@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://du5lc1oib8yfd"]
+
+[ext_resource type="Script" uid="uid://ik7ld3wemvch" path="res://src/ui_control.gd" id="1_nt7q6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xlq6p"]
+font_size = 30
+
+[node name="UI" type="CanvasLayer" unique_id=140447666 node_paths=PackedStringArray("ammo_label")]
+script = ExtResource("1_nt7q6")
+ammo_label = NodePath("AmmoCount/AmmoLabel")
+
+[node name="AmmoCount" type="Control" parent="." unique_id=1301280991]
+layout_mode = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="AmmoLabel" type="Label" parent="AmmoCount" unique_id=270369432]
+layout_mode = 0
+offset_left = -190.0
+offset_top = -71.0
+text = "AMMO: XX"
+label_settings = SubResource("LabelSettings_xlq6p")
+horizontal_alignment = 2
+vertical_alignment = 1
