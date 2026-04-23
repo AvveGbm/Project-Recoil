@@ -14,7 +14,8 @@ var player: Player
 var loading_screen: CanvasLayer
 
 var player_health: int # Unused
-var player_score: int
+var player_score: int = 0
+var level_score: int = 0
 
 ## Ordered list of levels assigned by game.gd.
 ## GameState transitions through these by index.
@@ -33,8 +34,12 @@ var transition_in_progress: bool = false
 ## the timer starts and resets the level after a short delay.
 var softlock_timer: Timer
 
-## Signal used 
+## Signal used by other scripts to ensure game_state fields
+## have all been assigned.
 signal game_loaded
+
+## For updating the UI
+signal level_score_changed
 
 func _ready() -> void:
 	# Create the timer in code so GameState does not depend on a scene child.
@@ -87,24 +92,39 @@ func reset_level(delay: float = 0.0) -> void:
 		push_error("GameState.reset_level(): cannot reset, no current level.")
 		return
 	
+	reset_level_score()
 	if delay > 0.0:
 		await get_tree().create_timer(delay).timeout
+	
 	
 	await _transition_to_level(current_level_index, true)
 
 ## Loads the next level in the onfigured order
 ## If there is no next level, nothing happens.
+## Updates the player's total score
 func next_level() -> void:
 	var next_index := current_level_index + 1
 	if next_index >= level_scenes.size():
 		print("GameState.next_level(): No more levels.")
 		return
+	increase_player_score()
 	await _transition_to_level(next_index, true)
 
-## Increments total player score by amount
-func increase_score(amount: int) -> void:
-	player_score += amount
-	print("Total score: " + str(player_score))
+## Increments level score by amount
+func increase_level_score(amount: int) -> void:
+	level_score += amount
+	level_score_changed.emit(level_score)
+	
+func reset_level_score() -> void:
+	level_score = 0
+	level_score_changed.emit(level_score)
+	
+## Adds level score to total score upon level clear
+## Also resets level score.
+func increase_player_score() -> void:
+	player_score += level_score
+	level_score = 0
+	level_score_changed.emit(level_score)
 
 ## Handles the full level transition to the level with level_index.
 ## if use_fade it will add a transition with loading_screen.fade_in / loading_screen.fade_out
