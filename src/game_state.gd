@@ -33,6 +33,9 @@ var transition_in_progress: bool = false
 ## the timer starts and resets the level after a short delay.
 var softlock_timer: Timer
 
+## Signal used 
+signal game_loaded
+
 func _ready() -> void:
 	# Create the timer in code so GameState does not depend on a scene child.
 	softlock_timer = Timer.new()
@@ -73,6 +76,7 @@ func register_game(
 ## Starts the game by loading the requested level index.
 func start_game(start_level_index: int = 0) -> void:
 	await _transition_to_level(start_level_index, false)
+	game_loaded.emit()
 
 ## Reloads the current level with a fade transition, optionally after a short delay.
 func reset_level(delay: float = 0.0) -> void:
