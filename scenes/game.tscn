@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bhxil7rr4bpxg"]
 
-[ext_resource type="Script" uid="uid://pvsssg45lod0" path="res://src/level_container.gd" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://drcm64aa0h4vg" path="res://src/level_container.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cfrsvl884a3h5" path="res://scenes/levels/level_test.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c0sm0vsja0ten" path="res://scenes/player.tscn" id="4_lbhrr"]
-[ext_resource type="Script" uid="uid://idn8cn5htofq" path="res://src/camera_2d.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://dby8mfrkvr21a" path="res://src/camera_2d.gd" id="5_iywne"]
 
 [node name="Game" type="Node2D" unique_id=199342983]
 

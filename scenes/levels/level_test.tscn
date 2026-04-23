@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cfrsvl884a3h5"]
 
-[ext_resource type="Script" uid="uid://dh7xtnd014f4o" path="res://src/level.gd" id="1_uh3ll"]
+[ext_resource type="Script" uid="uid://l7ci4uc8fdbq" path="res://src/level.gd" id="1_uh3ll"]
 [ext_resource type="Texture2D" uid="uid://rm1ri7kh8ky6" path="res://assets/tileset_basic.png" id="1_ycf23"]
 [ext_resource type="PackedScene" uid="uid://d1e0415wa305y" path="res://scenes/levelObjects/killzone.tscn" id="2_uh3ll"]
 [ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammo.tscn" id="3_4lw2e"]
