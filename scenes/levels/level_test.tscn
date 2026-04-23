@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://cfrsvl884a3h5"]
 
-[ext_resource type="Script" uid="uid://l7ci4uc8fdbq" path="res://src/level.gd" id="1_uh3ll"]
 [ext_resource type="Texture2D" uid="uid://rm1ri7kh8ky6" path="res://assets/tileset_basic.png" id="1_ycf23"]
 [ext_resource type="PackedScene" uid="uid://d1e0415wa305y" path="res://scenes/levelObjects/killzone.tscn" id="2_uh3ll"]
 [ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammo.tscn" id="3_4lw2e"]
@@ -1476,7 +1475,6 @@ _data = {
 }
 
 [node name="levelTest" type="Node2D" unique_id=1882873330]
-script = ExtResource("1_uh3ll")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2133515183]
 physics_interpolation_mode = 2
@@ -1539,5 +1537,5 @@ root_node = NodePath("../../../..")
 libraries/ = SubResource("AnimationLibrary_gee14")
 autoplay = &"move"
 
-[node name="spawnLocation" type="Node2D" parent="." unique_id=917037552]
+[node name="SpawnLocation" type="Marker2D" parent="." unique_id=1683538970]
 position = Vector2(-32, -32)

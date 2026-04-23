@@ -10,14 +10,10 @@ class_name Player
 @onready var weapon_slot = $WeaponSlot
 @onready var weapon: Weapon = $WeaponSlot/Weapon
 
-## Assigns the player in gamestate
-func _ready() -> void:
-	GameState.player = self
-
 ## Resets player fields to their defaults
-func reset_player():
+func reset_for_level(spawn_position: Vector2) -> void:
 	weapon.refill_full()
-	global_position = GameState.current_level_spawn_position
+	global_position = spawn_position
 	velocity = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b32b31bv2c4el" path="res://src/pickup.gd" id="1_5qljr"]
 [ext_resource type="Texture2D" uid="uid://bb2b2i8c7qgfm" path="res://assets/coin3_16x16.png" id="1_26h66"]
-[ext_resource type="PackedScene" uid="uid://1oh2fyatuts4" path="res://scenes/pickUpComponents/score_component.tscn" id="3_5qljr"]
+[ext_resource type="Script" uid="uid://kbkcjp2gwcdi" path="res://src/score_component.gd" id="2_5qljr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v664q"]
 size = Vector2(6, 6)
