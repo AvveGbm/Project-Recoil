@@ -5,9 +5,9 @@ class_name Weapon
 ## The bullet the weapon shoots.
 @export var bullet_scene: PackedScene
 ## Amount of recoil force applied to the shooter per shot.
-@export var recoil_strength: float = 300.0
+@export var recoil_strength: float = 250.0
 ## Minimum time (in seconds) between shots.
-@export var shot_cooldown: float = 0.2
+@export var shot_cooldown: float = 0.6
 ## Maximum ammo capacity of the weapon.
 @export var max_ammo: int = 10
 
