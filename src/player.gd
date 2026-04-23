@@ -2,10 +2,10 @@ extends CharacterBody2D
 class_name Player
 
 @export_group("Movement Settings")
-@export var ground_friction: float = 5.0
+@export var ground_friction: float = 14.0
 @export var air_drag: float = 1
 @export var gravity: float = 500.0
-@export var max_speed: float = 800.0
+@export var max_speed: float = 300.0
 
 @onready var weapon_slot = $WeaponSlot
 @onready var weapon: Weapon = $WeaponSlot/Weapon
@@ -37,4 +37,5 @@ func fire_weapon() -> void:
 		var recoil_force = weapon.shoot()
 		if recoil_force > 0:
 			var look_direction = (get_global_mouse_position() - global_position).normalized()
-			velocity = -look_direction * recoil_force
+			velocity += -look_direction * recoil_force
+			velocity = velocity.limit_length(max_speed)
