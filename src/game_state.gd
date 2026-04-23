@@ -33,8 +33,12 @@ var transition_in_progress: bool = false
 ## the timer starts and resets the level after a short delay.
 var softlock_timer: Timer
 
-## Signal used 
+## Signal used by other scripts to ensure game_state fields
+## have all been assigned.
 signal game_loaded
+
+## For updating the UI
+signal score_changed
 
 func _ready() -> void:
 	# Create the timer in code so GameState does not depend on a scene child.
@@ -104,6 +108,7 @@ func next_level() -> void:
 ## Increments total player score by amount
 func increase_score(amount: int) -> void:
 	player_score += amount
+	score_changed.emit(player_score)
 	print("Total score: " + str(player_score))
 
 ## Handles the full level transition to the level with level_index.
