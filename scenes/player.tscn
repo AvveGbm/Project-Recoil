@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b7u7h7ammvfd4" path="res://src/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://cysew2aq4dqih" path="res://scenes/weapon.tscn" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://bjxo3uebd2kgo" path="res://scenes/bullet.tscn" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://br8hl3a7v5mog" path="res://scenes/player_hazard_interaction.gd" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
 radius = 5.0
@@ -27,3 +28,16 @@ bullet_scene = ExtResource("3_qhqgy")
 recoil_strength = 250.0
 shot_cooldown = 0.6
 max_ammo = 10
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1519080951]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("4_dqkch")
+
+[node name="HazardTileCollider" type="CollisionShape2D" parent="Area2D" unique_id=446138820]
+position = Vector2(0, 0.6)
+scale = Vector2(0.95, 0.9)
+shape = SubResource("CapsuleShape2D_u8vuu")
+debug_color = Color(0.75068337, 0.45199388, 0.23302734, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
