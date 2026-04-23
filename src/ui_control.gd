@@ -9,7 +9,7 @@ func _ready() -> void:
 	await GameState.game_loaded
 	_initial_update()
 	GameState.player.weapon.ammo_changed.connect(_on_ammo_changed)
-	GameState.score_changed.connect(_on_score_changed)
+	GameState.level_score_changed.connect(_on_score_changed)
 	
 func _on_ammo_changed(current, total: int):
 	update_ammo_label(current, total)
