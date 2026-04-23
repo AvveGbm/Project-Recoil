@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameState="*uid://bxjk6nbb3uo5q"
-LoadingScreen="*uid://dpw40yetntbjl"
 
 [display]
 

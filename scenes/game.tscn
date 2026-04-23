@@ -1,32 +1,22 @@
 [gd_scene format=3 uid="uid://bhxil7rr4bpxg"]
 
-[ext_resource type="Script" path="res://src/game.gd" id="1_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://cfrsvl884a3h5" path="res://scenes/levels/level_test.tscn" id="1_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://b7stgsgk2dqot" path="res://scenes/levels/level_test2.tscn" id="3_p57ef"]
+[ext_resource type="Script" uid="uid://j3qyift0sghj" path="res://src/game.gd" id="1_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bjcwrbau5ygf6" path="res://scenes/levels/level1.tscn" id="2_p57ef"]
+[ext_resource type="PackedScene" uid="uid://cfrsvl884a3h5" path="res://scenes/levels/level_test.tscn" id="2_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://c0sm0vsja0ten" path="res://scenes/player.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://du5lc1oib8yfd" path="res://scenes/ui.tscn" id="4_u5sy4"]
-[ext_resource type="Script" uid="uid://dby8mfrkvr21a" path="res://src/camera_2d.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://0s2u2r8w0q46" path="res://src/camera_2d.gd" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://bjnkocaadkd61" path="res://scenes/loading_screen.tscn" id="5_p57ef"]
-
-[sub_resource type="GDScript" id="GDScript_lnu2h"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	GameState.level_container = self
-"
 
 [node name="Game" type="Node2D" unique_id=199342983]
 script = ExtResource("1_lbhrr")
-levels = Array[PackedScene]([ExtResource("1_lnu2h"), ExtResource("3_p57ef")])
+levels = Array[PackedScene]([ExtResource("2_p57ef"), ExtResource("2_u5sy4")])
 
 [node name="UI" parent="." unique_id=1349421774 instance=ExtResource("4_u5sy4")]
 
 [node name="levelContainer" type="Node2D" parent="." unique_id=821701576]
-script = SubResource("GDScript_lnu2h")
 
-[node name="levelTest" parent="levelContainer" unique_id=1882873330 instance=ExtResource("1_lnu2h")]
+[node name="level1" parent="levelContainer" unique_id=1882873330 instance=ExtResource("2_p57ef")]
 
 [node name="Player" parent="." unique_id=1454191691 instance=ExtResource("4_lbhrr")]
 unique_name_in_owner = true
@@ -38,5 +28,6 @@ zoom = Vector2(3.5, 3.5)
 limit_enabled = false
 script = ExtResource("5_iywne")
 follow_target = NodePath("../Player")
+follow_smoothing = 10.0
 
 [node name="LoadingScreen" parent="." unique_id=1218797811 instance=ExtResource("5_p57ef")]
