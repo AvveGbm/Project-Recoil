@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c0iqepnpitdio"]
 
 [ext_resource type="Script" uid="uid://5qw6jrm4fj0d" path="res://src/pickup.gd" id="1_dof3y"]
-[ext_resource type="Texture2D" uid="uid://cjovlbr3j6y1t" path="res://assets/bullet.png" id="1_grevx"]
-[ext_resource type="PackedScene" path="res://scenes/ammo_component.tscn" id="3_dof3y"]
+[ext_resource type="Texture2D" uid="uid://cjovlbr3j6y1t" path="res://assets/sprites/bullet.png" id="1_grevx"]
+[ext_resource type="PackedScene" uid="uid://duyxv8rejsdt8" path="res://scenes/ammo_component.tscn" id="3_dof3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v664q"]
 size = Vector2(4, 8)

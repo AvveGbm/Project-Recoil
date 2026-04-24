@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0reyqitjc24u"]
 
-[ext_resource type="Texture2D" uid="uid://dc2crjsw7omxh" path="res://assets/single_brick_block.png" id="1_o5iw1"]
+[ext_resource type="Texture2D" uid="uid://dc2crjsw7omxh" path="res://assets/tilesets/single_brick_block.png" id="1_o5iw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
 size = Vector2(16, 48)
