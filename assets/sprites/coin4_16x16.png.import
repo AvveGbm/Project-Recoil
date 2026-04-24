@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd4qfvnc11w3y"
-path="res://.godot/imported/simplefx-alpha.png-b2794fcabf1a6f4d8089345348fcb321.ctex"
+uid="uid://dvhlvbfq7hxcs"
+path="res://.godot/imported/coin4_16x16.png-1218b212e7c26048b9012cb676caf7a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/simplefx-alpha.png"
-dest_files=["res://.godot/imported/simplefx-alpha.png-b2794fcabf1a6f4d8089345348fcb321.ctex"]
+source_file="res://assets/sprites/coin4_16x16.png"
+dest_files=["res://.godot/imported/coin4_16x16.png-1218b212e7c26048b9012cb676caf7a9.ctex"]
 
 [params]
 
