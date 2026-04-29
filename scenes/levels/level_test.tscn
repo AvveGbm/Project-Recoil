@@ -1,49 +1,11 @@
 [gd_scene format=4 uid="uid://cfrsvl884a3h5"]
 
 [ext_resource type="TileSet" uid="uid://or2iopkhcoog" path="res://assets/tilesets/tileset_basic.tres" id="1_ycf23"]
-[ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammo.tscn" id="3_4lw2e"]
-[ext_resource type="PackedScene" uid="uid://cehfc5pee5adg" path="res://scenes/levelObjects/coin.tscn" id="4_bqmi1"]
-[ext_resource type="PackedScene" uid="uid://c0reyqitjc24u" path="res://scenes/levelObjects/verticalPlatform.tscn" id="5_8883n"]
+[ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammoPickup.tscn" id="3_4lw2e"]
+[ext_resource type="PackedScene" uid="uid://cehfc5pee5adg" path="res://scenes/levelObjects/coinPickup.tscn" id="4_bqmi1"]
 [ext_resource type="PackedScene" uid="uid://dy5d7eskx4v1k" path="res://scenes/levelObjects/goal.tscn" id="6_uh3ll"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
-
-[sub_resource type="Animation" id="Animation_p57ef"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("levelContainer/levelTest/movingPlatform:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(216, -40)]
-}
-
-[sub_resource type="Animation" id="Animation_u5sy4"]
-resource_name = "move"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("levelContainer/levelTest/movingPlatform:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(216, -40), Vector2(216, -104)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gee14"]
-_data = {
-&"RESET": SubResource("Animation_p57ef"),
-&"move": SubResource("Animation_u5sy4")
-}
 
 [node name="levelTest" type="Node2D" unique_id=1882873330]
 
@@ -77,14 +39,6 @@ position = Vector2(88, -24)
 
 [node name="Coin5" parent="Coins" unique_id=1971363533 instance=ExtResource("4_bqmi1")]
 position = Vector2(104, -24)
-
-[node name="movingPlatform" parent="." unique_id=506586740 instance=ExtResource("5_8883n")]
-position = Vector2(216, -40)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="movingPlatform" unique_id=1782977150]
-root_node = NodePath("../../../..")
-libraries/ = SubResource("AnimationLibrary_gee14")
-autoplay = &"move"
 
 [node name="Goal" parent="." unique_id=1495685245 instance=ExtResource("6_uh3ll")]
 position = Vector2(567, -8)
