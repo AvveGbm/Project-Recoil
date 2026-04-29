@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://b7stgsgk2dqot"]
 
 [ext_resource type="TileSet" uid="uid://or2iopkhcoog" path="res://assets/tilesets/tileset_basic.tres" id="1_r2jds"]
-[ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammo.tscn" id="3_mlbia"]
-[ext_resource type="PackedScene" uid="uid://cehfc5pee5adg" path="res://scenes/levelObjects/coin.tscn" id="4_lghq2"]
+[ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammoPickup.tscn" id="3_mlbia"]
+[ext_resource type="PackedScene" uid="uid://cehfc5pee5adg" path="res://scenes/levelObjects/coinPickup.tscn" id="4_lghq2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 

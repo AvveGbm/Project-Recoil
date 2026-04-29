@@ -33,7 +33,7 @@ const DEFAULT_TEXTURE := preload("res://assets/tilesets/single_brick_block.png")
 
 ## Movement speed in tiles per second.
 @export_range(0.25, 32.0, 0.25, "or_greater", "suffix:tiles/sec")
-var movement_speed_tiles_per_second: float = 4.0:
+var movement_speed_tiles_per_second: float = 1.0:
 	set(value):
 		movement_speed_tiles_per_second = value
 
@@ -117,6 +117,10 @@ func _update_collision() -> void:
 
 	if collision_shape_node.shape == null or not collision_shape_node.shape is RectangleShape2D:
 		collision_shape_node.shape = RectangleShape2D.new()
+
+	if not collision_shape_node.shape.resource_local_to_scene:
+		collision_shape_node.shape = collision_shape_node.shape.duplicate()
+		collision_shape_node.shape.resource_local_to_scene = true
 
 	var rectangle_shape := collision_shape_node.shape as RectangleShape2D
 	rectangle_shape.size = _get_platform_size_in_pixels()

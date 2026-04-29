@@ -1,18 +1,13 @@
 [gd_scene format=3 uid="uid://cq6s26rayaism"]
 
-[ext_resource type="Script" uid="uid://hmbebcw8toqa" path="res://src/custom_moving_platform.gd" id="1_3cna6"]
+[ext_resource type="Script" uid="uid://hmbebcw8toqa" path="res://src/moving_platform.gd" id="1_3cna6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cna6"]
-size = Vector2(48, 16)
+size = Vector2(16, 48)
 
 [node name="MovingPlatform" type="AnimatableBody2D" unique_id=404118141]
 script = ExtResource("1_3cna6")
-size_tiles = Vector2i(3, 1)
-end_offset_tiles = null
-speed_tiles_per_second = null
-ease_amount = null
-pause_at_ends = 0.0
-show_preview = null
+movement_speed_tiles_per_second = 4.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=281672379]
 shape = SubResource("RectangleShape2D_3cna6")

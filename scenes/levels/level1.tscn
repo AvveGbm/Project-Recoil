@@ -2,93 +2,12 @@
 
 [ext_resource type="TileSet" uid="uid://or2iopkhcoog" path="res://assets/tilesets/tileset_basic.tres" id="1_2r1tl"]
 [ext_resource type="Script" uid="uid://b8pexwcdrc7ud" path="res://src/killzone.gd" id="3_oyk6k"]
-[ext_resource type="PackedScene" uid="uid://cehfc5pee5adg" path="res://scenes/levelObjects/coin.tscn" id="4_gycjm"]
-[ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammo.tscn" id="5_8i1lk"]
-[ext_resource type="PackedScene" uid="uid://bs86pmej3loec" path="res://scenes/levelObjects/horizontalPlatform.tscn" id="6_hgky1"]
-[ext_resource type="PackedScene" uid="uid://c0reyqitjc24u" path="res://scenes/levelObjects/verticalPlatform.tscn" id="7_b4tpv"]
+[ext_resource type="PackedScene" uid="uid://cehfc5pee5adg" path="res://scenes/levelObjects/coinPickup.tscn" id="4_gycjm"]
+[ext_resource type="PackedScene" uid="uid://c0iqepnpitdio" path="res://scenes/levelObjects/ammoPickup.tscn" id="5_8i1lk"]
+[ext_resource type="PackedScene" uid="uid://cq6s26rayaism" path="res://scenes/levelObjects/movingPlatform.tscn" id="8_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://dy5d7eskx4v1k" path="res://scenes/levelObjects/goal.tscn" id="8_hkuam"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
-
-[sub_resource type="Animation" id="Animation_4lw2e"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Platforms/HorizontalPlatform:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(648, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Platforms/HorizontalPlatform2:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(808, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Platforms/VerticalPlatform:position:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_bqmi1"]
-resource_name = "move"
-length = 4.0
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Platforms/HorizontalPlatform:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(648, -1, 0, 1, 0, 712, -1, 0, 1, 0),
-"times": PackedFloat32Array(0.5, 3.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Platforms/HorizontalPlatform2:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(904, -1, 0, 1, 0, 840, -1, 0, 1, 0),
-"times": PackedFloat32Array(0.5, 3.5)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Platforms/VerticalPlatform:position:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-88, 0, -1, 0, 1, 24, 0, -1, 0, 1),
-"times": PackedFloat32Array(0.5, 3.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8883n"]
-_data = {
-&"RESET": SubResource("Animation_4lw2e"),
-&"move": SubResource("Animation_bqmi1")
-}
 
 [node name="level1" type="Node2D" unique_id=1882873330]
 
@@ -110,7 +29,7 @@ position = Vector2(1, 61)
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
 
 [node name="SpawnLocation" type="Marker2D" parent="." unique_id=1683538970]
-position = Vector2(-31, -34)
+position = Vector2(-32, -40)
 
 [node name="Pickups" type="Node" parent="." unique_id=930254643]
 
@@ -145,19 +64,22 @@ position = Vector2(1038, 6)
 
 [node name="Platforms" type="Node" parent="." unique_id=1937542567]
 
-[node name="HorizontalPlatform" parent="Platforms" unique_id=506586740 instance=ExtResource("6_hgky1")]
-position = Vector2(648, -136)
+[node name="MovingPlatform" parent="Platforms" unique_id=404118141 instance=ExtResource("8_8a7m2")]
+position = Vector2(664, -136)
+movement_speed_tiles_per_second = 2.0
+wait_time_at_ends = 0.5
 
-[node name="HorizontalPlatform2" parent="Platforms" unique_id=1160386350 instance=ExtResource("6_hgky1")]
-position = Vector2(808, -136)
+[node name="MovingPlatform2" parent="Platforms" unique_id=1247030229 instance=ExtResource("8_8a7m2")]
+position = Vector2(824, -136)
+movement_speed_tiles_per_second = 2.0
+wait_time_at_ends = 0.5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms" unique_id=76482144]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_8883n")
-autoplay = &"move"
-
-[node name="VerticalPlatform" parent="Platforms" unique_id=2125376074 instance=ExtResource("7_b4tpv")]
-position = Vector2(1144, 8)
+[node name="MovingPlatform3" parent="Platforms" unique_id=1065013978 instance=ExtResource("8_8a7m2")]
+position = Vector2(1144, -104)
+platform_size_tiles = Vector2i(1, 3)
+end_offset_tiles = Vector2i(0, 7)
+movement_speed_tiles_per_second = 2.0
+wait_time_at_ends = 1.0
 
 [node name="Goal" parent="." unique_id=1495685245 instance=ExtResource("8_hkuam")]
 position = Vector2(1241, -191)
