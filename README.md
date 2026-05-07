@@ -6,7 +6,7 @@ Project Recoil is a 2D-platformer where traversal happens entirely through recoi
 The minimum viable product is slightly above the minimum requirements of a game. The MVP has interactability, a goal, and some additional minor features. Concretely, this means a means of moving the player, a working environment in which the player can move (levels) and level essentials, e.g. death areas, a finish line, and pick-ups.
 
 #### Features
-- Multiple levels to suffer through, enjoy!
+- Multiple levels to ~~suffer through~~ enjoy!
 - Riveting recoil-based movement!
 - Exciting resource management!
 - A working economy!
