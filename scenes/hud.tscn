@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du5lc1oib8yfd"]
 
-[ext_resource type="Script" uid="uid://ik7ld3wemvch" path="res://src/ui_control.gd" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://ik7ld3wemvch" path="res://src/hud.gd" id="1_nt7q6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nt7q6"]
 font_size = 24
@@ -8,13 +8,15 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_xlq6p"]
 font_size = 24
 
-[node name="UI" type="CanvasLayer" unique_id=140447666 node_paths=PackedStringArray("score_label", "ammo_label")]
+[node name="HUD" type="Control" unique_id=874038080 node_paths=PackedStringArray("score_label", "ammo_label")]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_nt7q6")
 score_label = NodePath("AmmoCount/VSplitContainer/ScoreLabel")
 ammo_label = NodePath("AmmoCount/VSplitContainer/AmmoLabel")
 
 [node name="AmmoCount" type="Control" parent="." unique_id=1301280991]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0

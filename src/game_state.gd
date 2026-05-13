@@ -11,11 +11,13 @@ extends Node
 var game_root: Node
 var level_container: Node2D
 var player: Player
-var loading_screen: CanvasLayer
+var loading_screen: Control
 
 var player_health: int # Unused
 var player_score: int = 0
 var level_score: int = 0
+
+var game_started: bool = false
 
 ## Ordered list of levels assigned by game.gd.
 ## GameState transitions through these by index.
@@ -69,7 +71,7 @@ func register_game(
 	p_game_root: Node,
 	p_level_container: Node2D,
 	p_player: Player,
-	p_loading_screen: CanvasLayer,
+	p_loading_screen: Control,
 	p_level_scenes: Array[PackedScene],
 ) -> void:
 	game_root = p_game_root
@@ -80,6 +82,10 @@ func register_game(
 
 ## Starts the game by loading the requested level index.
 func start_game(start_level_index: int = 0) -> void:
+	game_started = true
+	player.visible = true
+	player.process_mode = Node.PROCESS_MODE_INHERIT
+	
 	await _transition_to_level(start_level_index, false)
 	game_loaded.emit()
 
