@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 
 @export var score_label: Label

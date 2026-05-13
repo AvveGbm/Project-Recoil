@@ -4,15 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://bjcwrbau5ygf6" path="res://scenes/levels/level1.tscn" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://cfrsvl884a3h5" path="res://scenes/levels/level_test.tscn" id="2_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://c0sm0vsja0ten" path="res://scenes/player.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://du5lc1oib8yfd" path="res://scenes/ui.tscn" id="4_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://du5lc1oib8yfd" path="res://scenes/hud.tscn" id="4_u5sy4"]
 [ext_resource type="Script" uid="uid://0s2u2r8w0q46" path="res://src/camera_2d.gd" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://bjnkocaadkd61" path="res://scenes/loading_screen.tscn" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://ve1hwi4nosw7" path="res://scenes/main_menu.tscn" id="8_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://b5q013shfkqfp" path="res://scenes/pause_menu.tscn" id="9_vtaks"]
 
 [node name="Game" type="Node2D" unique_id=199342983]
 script = ExtResource("1_lbhrr")
 levels = Array[PackedScene]([ExtResource("2_p57ef"), ExtResource("2_u5sy4")])
-
-[node name="UI" parent="." unique_id=1349421774 instance=ExtResource("4_u5sy4")]
 
 [node name="levelContainer" type="Node2D" parent="." unique_id=821701576]
 
@@ -30,4 +30,19 @@ script = ExtResource("5_iywne")
 follow_target = NodePath("../Player")
 follow_smoothing = 10.0
 
-[node name="LoadingScreen" parent="." unique_id=1218797811 instance=ExtResource("5_p57ef")]
+[node name="UI" type="CanvasLayer" parent="." unique_id=838067585]
+
+[node name="HUD" parent="UI" unique_id=874038080 instance=ExtResource("4_u5sy4")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" parent="UI" unique_id=1116656442 instance=ExtResource("8_0tnpc")]
+visible = false
+
+[node name="PauseMenu" parent="UI" unique_id=424258800 instance=ExtResource("9_vtaks")]
+visible = false
+
+[node name="LoadingScreen" parent="UI" unique_id=1218797811 instance=ExtResource("5_p57ef")]

@@ -1,10 +1,9 @@
-extends CanvasLayer
+extends Control
 
 @onready var color_rect: ColorRect = $background
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	layer = 100
 	color_rect.color.a = 0.0
 
 func fade_in() -> void:
