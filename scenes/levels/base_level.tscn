@@ -22,7 +22,7 @@ script = ExtResource("2_wwrw0")
 position = Vector2(8, 56)
 shape = SubResource("WorldBoundaryShape2D_fiq81")
 
-[node name="SpwanLocation" type="Marker2D" parent="." unique_id=936717588]
+[node name="SpawnLocation" type="Marker2D" parent="." unique_id=936717588]
 
 [node name="Pickups" type="Node" parent="." unique_id=1321264235]
 
