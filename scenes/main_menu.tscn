@@ -48,5 +48,13 @@ text = "PLAY"
 layout_mode = 2
 text = "QUIT"
 
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1176217177]
+layout_mode = 2
+text = "Start level index (0-3) (debug option)"
+
+[node name="LevelSelectDebug" type="SpinBox" parent="VBoxContainer" unique_id=1023833705]
+layout_mode = 2
+max_value = 3.0
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
