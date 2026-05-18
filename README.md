@@ -4,6 +4,16 @@ Project Recoil is a 2D-platformer where traversal happens entirely through recoi
 
 The project is created in version 4.6 of the Godot game engine, using GDScript as the primary language.
 
+#### Demo
+
+
+https://github.com/user-attachments/assets/21029587-6621-4e93-afbb-4895b551bfa6
+
+
+https://youtu.be/Ki7TaquMtP0
+
+
+
 #### Minimum Viable Product
 The minimum viable product is slightly above the minimum requirements of a game. The MVP has interactability, a goal, and some additional minor features. Concretely, this means a means of moving the player, a working environment in which the player can move (levels) and level essentials, e.g. death areas, a finish line, and pick-ups.
 
