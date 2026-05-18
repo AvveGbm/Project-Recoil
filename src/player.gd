@@ -14,6 +14,7 @@ class_name Player
 @onready var weapon: Weapon = $WeaponSlot/Weapon
 
 var fire_buffer_timer: float = 0.0
+var has_moved: bool = false
 
 ## Resets player fields to their defaults
 func reset_for_level(spawn_position: Vector2) -> void:
@@ -21,6 +22,7 @@ func reset_for_level(spawn_position: Vector2) -> void:
 	global_position = spawn_position
 	velocity = Vector2.ZERO
 	fire_buffer_timer = 0.0
+	has_moved = false
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -50,8 +52,11 @@ func try_fire_weapon() -> bool:
 	var recoil_force = weapon.shoot()
 	if recoil_force <= 0:
 		return false
-
+	
 	var look_direction = (get_global_mouse_position() - global_position).normalized()
 	velocity += -look_direction * recoil_force
 	velocity = velocity.limit_length(max_speed)
+	
+	has_moved = true
+	
 	return true
