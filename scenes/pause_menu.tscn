@@ -2,7 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c6drx7sn0p61t" path="res://src/pause_menu.gd" id="1_n87rw"]
 
-[node name="PauseMenu" type="Control" unique_id=424258800]
+[sub_resource type="LabelSettings" id="LabelSettings_n87rw"]
+font_size = 70
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_myx47"]
+font_size = 24
+
+[node name="PauseMenu" type="Control" unique_id=424258800 node_paths=PackedStringArray("level_label", "total_score_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +19,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n87rw")
+level_label = NodePath("VSplitContainer/LevelLabel")
+total_score_label = NodePath("VSplitContainer/ScoreLabel")
 
 [node name="PausePanel" type="Panel" parent="." unique_id=426335770]
 modulate = Color(1, 1, 1, 0.8627451)
@@ -47,6 +58,31 @@ text = "RESUME"
 [node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=1570285722]
 layout_mode = 2
 text = "EXIT TO MAIN MENU"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="." unique_id=927180459]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 20.0
+offset_right = 130.0
+offset_bottom = 162.0
+grow_horizontal = 2
+
+[node name="LevelLabel" type="Label" parent="VSplitContainer" unique_id=1103760315]
+layout_mode = 2
+text = "LEVEL X"
+label_settings = SubResource("LabelSettings_n87rw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="VSplitContainer" unique_id=245130099]
+layout_mode = 2
+text = "TOTAL SCORE: XXX"
+label_settings = SubResource("LabelSettings_myx47")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
