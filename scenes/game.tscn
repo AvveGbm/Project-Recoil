@@ -14,7 +14,7 @@
 
 [node name="Game" type="Node2D" unique_id=199342983]
 script = ExtResource("1_lbhrr")
-levels = Array[PackedScene]([ExtResource("2_p57ef"), ExtResource("2_0tnpc"), ExtResource("2_vtaks"), ExtResource("2_kvpfn")])
+levels = Array[PackedScene]([ExtResource("2_0tnpc"), ExtResource("2_vtaks"), ExtResource("2_kvpfn"), ExtResource("2_p57ef")])
 
 [node name="levelContainer" type="Node2D" parent="." unique_id=821701576]
 
